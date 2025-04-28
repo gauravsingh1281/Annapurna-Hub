@@ -1,0 +1,24 @@
+{
+  "name": "annapurna-hub",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/gauravsingh1281/Annapurna-Hub#readme",
+  "bugs": {
+    "url": "https://github.com/gauravsingh1281/Annapurna-Hub/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gauravsingh1281/Annapurna-Hub.git"
+  },
+  "license": "ISC",
+  "author": "Gaurav Pratap Singh | Ambika Dhakar",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
