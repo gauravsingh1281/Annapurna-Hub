@@ -11,14 +11,20 @@ app.get("/", (req, res) => {
 app.get("/login", (req, res) => {
   res.render("login.ejs");
 });
+
 app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
 app.get("/ngo-dashboard", (req, res) => {
   res.render("ngo-dashboard.ejs");
 });
+
 app.get("/donor-dashboard", (req, res) => {
   res.render("donor-dashboard.ejs");
+});
+
+app.get("/donate", (req, res) => {
+  res.render("donate.ejs");
 });
 
 app.listen(port, () => {
