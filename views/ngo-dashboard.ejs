@@ -1,0 +1,90 @@
+<%- include('partials/header') %>
+
+
+    <body class="bg-gray-100">
+
+        <!-- Navbar -->
+        <nav class="bg-green-700 text-white p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">AnnapurnaHub</h1>
+            <div>
+                <span class="mr-4">Welcome, ngo name!</span>
+                <a href="/logout" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Dashboard -->
+        <div class="p-6">
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <h2 class="text-xl font-semibold text-gray-700">Total Donations</h2>
+                    <p class="text-3xl font-bold text-green-600 mt-2">
+                        Total donation
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <h2 class="text-xl font-semibold text-gray-700">People Fed</h2>
+                    <p class="text-3xl font-bold text-green-600 mt-2">
+
+                        people fed
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <h2 class="text-xl font-semibold text-gray-700">Pending Approvals</h2>
+                    <p class="text-3xl font-bold text-red-500 mt-2">
+
+                        pendingDonations
+                    </p>
+                </div>
+            </div>
+
+            <!-- Recent Donations Table -->
+            <div class="bg-white p-6 rounded-xl shadow">
+                <h2 class="text-2xl font-bold mb-4 text-green-700">Recent Donations</h2>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b">
+                            <th class="py-2">Donor</th>
+                            <th class="py-2">Food Type</th>
+                            <th class="py-2">Quantity</th>
+                            <th class="py-2">Status</th>
+                            <th class="py-2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b hover:bg-gray-100">
+                            <td class="py-2">
+
+                                donation donorName
+                            </td>
+                            <td class="py-2">
+
+                                donation foodType
+                            </td>
+                            <td class="py-2">
+
+                                donation quantity
+
+                            </td>
+                            <td class="py-2">
+
+                                donation status
+                            </td>
+                            <td class="py-2">
+                                <a href="/approve/" class="text-green-600 hover:text-green-800">Approve</a>
+                                <a href="/reject/" class="text-red-600 hover:text-red-800 ml-4">Reject</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </body>
+
+    </html>
+
+    <%- include('partials/footer') %>

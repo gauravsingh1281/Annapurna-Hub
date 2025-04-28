@@ -14,6 +14,9 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
+app.get("/ngo-dashboard", (req, res) => {
+  res.render("ngo-dashboard.ejs");
+});
 
 app.listen(port, () => {
   console.log(`App started listening on port ${port}`);
