@@ -1,0 +1,65 @@
+<%- include('partials/header') %>
+
+    <body class="bg-gray-50">
+
+        <!-- Navbar -->
+        <nav class="bg-green-600 text-white p-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">AnnapurnaHub</h1>
+            <div>
+                <span class="mr-4">Hi, donorName!</span>
+                <a href="/logout" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200">Logout</a>
+            </div>
+        </nav>
+
+        <!-- Main Dashboard -->
+        <div class="p-6">
+
+            <!-- Quick Action -->
+            <div class="flex justify-center mb-8">
+                <a href="/donate"
+                    class="bg-green-700 hover:bg-green-800 text-white py-3 px-6 rounded-xl text-lg font-semibold transition">
+                    + New Food Donation
+                </a>
+            </div>
+
+            <!-- Past Donations Table -->
+            <div class="bg-white p-6 rounded-xl shadow">
+                <h2 class="text-2xl font-bold mb-4 text-green-700">Your Donations</h2>
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b">
+                            <th class="py-2">Food Item</th>
+                            <th class="py-2">Quantity</th>
+                            <th class="py-2">Status</th>
+                            <th class="py-2">Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="border-b hover:bg-gray-100">
+                            <td class="py-2">
+                                donation.foodType
+                            </td>
+                            <td class="py-2">
+                                donation.quantity
+                            </td>
+                            <td class="py-2">
+                                <span class="px-2 py-1 rounded 
+                donation.status === 'Accepted' ? 'bg-green-100 text-green-700' : 
+                    donation.status === 'Pending' ? 'bg-yellow-100 text-yellow-700' : 
+                    'bg-red-100 text-red-700'">
+                                    donation.status
+                                </span>
+                            </td>
+                            <td class="py-2">
+                                donation.peopleFed || '-' people
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <%- include('partials/footer') %>
