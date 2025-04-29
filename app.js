@@ -52,9 +52,9 @@ mongoose
 // User Schema and Model
 const userSchema = new mongoose.Schema({
   name: String,
-  email: String,
   password: String,
-  role: String, // 'donor' or 'ngo'
+  role: String, // "donor" or "ngo"
+  createdAt: { type: Date, default: Date.now },
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -96,18 +96,25 @@ app.get("/donor-dashboard", (req, res) => {
     res.render("donor-dashboard.ejs", { user: req.user });
   } else {
     res.redirect("/login");
-  } // If the user is not authenticated, redirect to the login page
+  }
 });
 
 app.get("/ngo-dashboard", (req, res) => {
-  res.render("ngo-dashboard.ejs", { user: req.user });
+  if (req.isAuthenticated()) {
+    if (req.user.role !== "ngo") {
+      return res.redirect("/" + req.user.role + "-dashboard");
+    }
+    res.render("ngo-dashboard.ejs", { user: req.user });
+  } else {
+    res.redirect("/login");
+  }
 });
 
 // Register Route (Handles user registration)
 app.post("/register", (req, res) => {
-  const { name, email, password, role } = req.body;
+  const { name, username, password, role } = req.body;
 
-  User.register({ username: email, name, role }, password, (err, user) => {
+  User.register({ username, name, role }, password, (err, user) => {
     if (err) {
       console.log(err);
       return res.redirect("/register");
@@ -123,7 +130,7 @@ app.post("/register", (req, res) => {
 app.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/donor-dashboard",
+    successRedirect: "/dashboard-role-redirect",
     failureRedirect: "/login",
   })
 );
