@@ -1,43 +1,461 @@
 <%- include('partials/header') %>
 
-    <body class="bg-orange-50 font-sans">
+    <body class="bg-white text-gray-800">
 
         <!-- Navbar -->
-        <nav class="flex items-center justify-between px-8 py-5 bg-green-600 text-white">
-            <div class="text-2xl font-bold">Annapurna Hub</div>
+        <nav class="flex justify-between items-center px-6 py-4 border-b shadow-sm">
+            <div class="flex items-center space-x-2">
+                <img src="/mnt/data/A_logo_design_for_\" Annapurna_Hub\"_features_the_com.png" alt="Annapurna Logo"
+                    class="h-10 w-auto">
+            </div>
             <ul class="flex space-x-6 font-medium">
-                <li><a href="#" class="hover:text-yellow-300">Home</a></li>
-                <li><a href="#" class="hover:text-yellow-300">Post Food</a></li>
-                <li><a href="#" class="hover:text-yellow-300">Find Food</a></li>
-                <li><a href="#" class="hover:text-yellow-300">About Us</a></li>
-                <li><a href="#" class="hover:text-yellow-300">Contact</a></li>
+                <li><a href="#" class="hover:text-pink-600">Home</a></li>
+                <li><a href="#" class="hover:text-pink-600">About Us</a></li>
+                <li><a href="#" class="hover:text-pink-600">Contact Us</a></li>
+                <li><a href="#" class="hover:text-pink-600">More Links ▾</a></li>
             </ul>
+            <div class="flex space-x-3">
+                <button
+                    class="border border-black px-4 py-1 rounded-full hover:bg-black hover:text-white transition">Donate</button>
+                <button class="bg-pink-600 text-white px-4 py-1 rounded-full hover:bg-pink-700 transition">Join</button>
+            </div>
         </nav>
 
         <!-- Hero Section -->
-        <section
-            class="flex flex-col-reverse md:flex-row items-center justify-center py-16 px-8 bg-gradient-to-br from-teal-100 via-orange-50 to-teal-50">
-
-            <!-- Left Content -->
-            <div class="md:w-1/2 text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-bold text-green-700 mb-4">
-                    भूख मिटाएं, सेवा बढ़ाएं।
+        <section class="flex flex-col md:flex-row justify-between items-center px-8 py-16">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-snug mb-6">
+                    Join the Food Donation<br />
+                    Revolution Today!
                 </h1>
-                <p class="text-lg text-gray-700 mb-6">
-                    Welcome to Annapurna Hub — Where every extra meal becomes a blessing.
+                <p class="text-gray-600 text-lg mb-6 max-w-lg">
+                    AnnapurnaHub connects food donors with NGOs to reduce waste and feed those in need.
+                    Join us in creating a sustainable solution to hunger and food surplus.
                 </p>
-                <a href="#"
-                    class="inline-block px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition">
-                    Post Food Now
-                </a>
+                <div class="space-x-4">
+                    <a href="#"
+                        class="bg-pink-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-pink-700">Sign
+                        Up</a>
+                    <a href="#"
+                        class="border border-gray-700 px-5 py-2 rounded-full font-semibold hover:bg-gray-100">Learn
+                        More</a>
+                </div>
             </div>
+            <div class="md:w-1/2 flex justify-center">
 
-            <!-- Right Image -->
-            <div class="md:w-1/2 mb-8 md:mb-0">
-                <img src="https://images.unsplash.com/photo-1604909052833-c5d60306edbf?crop=entropy&cs=tinysrgb&fit=crop&h=600&w=800"
-                    alt="Food Sharing" class="rounded-2xl shadow-lg w-full max-w-md mx-auto">
+                <img class="w-[300px] h-64 md:h-80 rounded-xl object-cover
+                " src="/images/header-img.png" alt="">
+
             </div>
-
         </section>
 
-        <%- include("partials/footer") %>
+        <!-- Connect Section -->
+        <section class="flex flex-col md:flex-row justify-between items-center px-8 py-16 bg-gray-50">
+            <div class="md:w-1/2 space-y-6 mb-10 md:mb-0">
+                <p class="font-semibold">Connect</p>
+                <h2 class="text-3xl md:text-4xl font-bold">Bridging Donors and NGOs for Food Rescue</h2>
+                <p class="text-gray-600 text-lg max-w-lg">
+                    AnnapurnaHub creates a seamless connection between food donors and NGOs.
+                    Our platform ensures that excess food reaches those in need efficiently and transparently.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                    <div>
+                        <div class="text-2xl mb-2">📦</div>
+                        <h3 class="font-semibold">Empower Change</h3>
+                        <p class="text-sm text-gray-600">Transform food waste into nourishment for communities in need.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="text-2xl mb-2">📦</div>
+                        <h3 class="font-semibold">Join Us</h3>
+                        <p class="text-sm text-gray-600">Be part of a solution that makes a difference.</p>
+                    </div>
+                </div>
+                <div class="pt-6 space-x-4">
+                    <a href="#" class="border border-black px-5 py-2 rounded-full font-semibold hover:bg-gray-100">Learn
+                        More</a>
+                    <a href="#" class="text-pink-600 font-medium hover:underline">Sign Up →</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="bg-gray-200 w-full h-64 md:h-80 rounded-xl flex items-center justify-center">
+                    <span class="text-gray-400 text-3xl">Image Placeholder</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="px-8 py-16">
+            <div class="flex flex-col md:flex-row justify-between mb-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold leading-snug mb-4">
+                        Empowering Food Donations:<br />
+                        Streamlined Features for Donors and NGOs
+                    </h2>
+                </div>
+                <div class="md:w-1/2 text-gray-600 text-lg">
+                    <p>
+                        Our platform offers a secure login and registration system, ensuring that both donors and NGOs
+                        can access their accounts safely. Role-based dashboards provide tailored experiences, allowing
+                        users
+                        to manage their donations or approvals efficiently. With a responsive design, our website is
+                        accessible
+                        on any device, making food donation easier than ever.
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="text-2xl mb-3">📦</div>
+                    <h3 class="font-semibold text-lg">User-Friendly Dashboards for Donors and NGOs</h3>
+                    <p class="text-sm text-gray-600 mt-2 mb-3">Experience intuitive dashboards customized for each user
+                        role.</p>
+                    <a href="#" class="font-medium hover:underline">Learn More →</a>
+                </div>
+                <div>
+                    <div class="text-2xl mb-3">📦</div>
+                    <h3 class="font-semibold text-lg">Real-Time Status Tracking for Food Donations</h3>
+                    <p class="text-sm text-gray-600 mt-2 mb-3">Track your donations from pending to distribution
+                        seamlessly.</p>
+                    <a href="#" class="font-medium hover:underline">Sign Up →</a>
+                </div>
+                <div>
+                    <div class="text-2xl mb-3">📦</div>
+                    <h3 class="font-semibold text-lg">Responsive Design for All Devices</h3>
+                    <p class="text-sm text-gray-600 mt-2 mb-3">Access our platform anytime, anywhere, on any device.</p>
+                    <a href="#" class="font-medium hover:underline">Join Us →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Process Section -->
+        <section class="px-8 py-20 bg-gray-50 text-center">
+            <h3 class="text-sm font-semibold text-gray-500 mb-2">Donate</h3>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">How Our Donation Process Works</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-10">
+                At AnnapurnaHub, we streamline the food donation process. Donors can easily submit their excess food,
+                which NGOs then approve and pick up for distribution.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+                <div class="space-y-8">
+                    <div>
+                        <div class="text-2xl mb-2">📦</div>
+                        <h4 class="font-semibold">Step 1: Submit Donation</h4>
+                        <p class="text-sm text-gray-600">Donors provide details about the food they wish to donate,
+                            making the process simple and efficient.</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl mb-2">📦</div>
+                        <h4 class="font-semibold">Step 2: NGO Approval</h4>
+                        <p class="text-sm text-gray-600">NGOs review the donations and approve them based on
+                            availability and logistics for pickup.</p>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center">
+                    <div class="bg-gray-200 w-64 h-64 rounded-xl flex items-center justify-center">
+                        <span class="text-gray-400 text-xl">Process Illustration</span>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div>
+                        <div class="text-2xl mb-2">📦</div>
+                        <h4 class="font-semibold">Step 3: Food Pickup</h4>
+                        <p class="text-sm text-gray-600">Approved donations are picked up by volunteers, ensuring timely
+                            and efficient food distribution.</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl mb-2">📦</div>
+                        <h4 class="font-semibold">Step 4: Distribution</h4>
+                        <p class="text-sm text-gray-600">Food reaches those in need, helping to reduce waste and combat
+                            hunger in our communities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 space-x-4">
+                <a href="#" class="border border-black px-5 py-2 rounded-full font-semibold hover:bg-gray-100">Learn
+                    More</a>
+                <a href="#" class="text-pink-600 font-medium hover:underline">Sign Up →</a>
+            </div>
+        </section>
+        <!-- IMPACT SECTION -->
+        <section class="px-8 py-20 text-left bg-white">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2 space-y-6">
+                    <p class="text-sm font-semibold text-gray-500">Impact</p>
+                    <h2 class="text-3xl md:text-4xl font-bold">
+                        Empowering Donors and NGOs for Greater Good
+                    </h2>
+                    <p class="text-gray-600 text-lg">
+                        AnnapurnaHub connects food donors with NGOs in real-time.
+                        Experience the satisfaction of making a difference with every donation.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+                        <div>
+                            <div class="text-2xl mb-2">📦</div>
+                            <h3 class="font-semibold">Real-Time Updates</h3>
+                            <p class="text-sm text-gray-600">
+                                Stay informed with instant notifications on donation status and logistics.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="text-2xl mb-2">📦</div>
+                            <h3 class="font-semibold">Visible Impact</h3>
+                            <p class="text-sm text-gray-600">
+                                Track how your contributions help feed those in need.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-6 space-x-4">
+                        <a href="#"
+                            class="border border-black px-5 py-2 rounded-full font-semibold hover:bg-gray-100">Learn
+                            More</a>
+                        <a href="#" class="text-pink-600 font-medium hover:underline">Sign Up →</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="bg-gray-200 w-full h-64 md:h-80 rounded-xl flex items-center justify-center">
+                        <span class="text-gray-400 text-xl">Image Placeholder</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- MISSION SECTION -->
+        <section class="px-8 py-20 text-left bg-white">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2 space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-bold">
+                        Connecting Food Donors with NGOs to Combat Hunger and Reduce Waste
+                    </h2>
+                    <p class="text-gray-600 text-lg">
+                        At AnnapurnaHub, we believe that no one should go hungry while food is wasted.
+                        Our mission is to streamline food donations, ensuring that surplus food reaches
+                        those in need efficiently and transparently.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="bg-gray-200 w-full h-64 md:h-80 rounded-xl flex items-center justify-center">
+                        <span class="text-gray-400 text-xl">Image Placeholder</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-white px-8 py-20 text-left">
+            <div class="max-w-4xl mx-auto space-y-10">
+                <h2 class="text-3xl md:text-4xl font-bold">FAQs</h2>
+                <p class="text-gray-600 text-lg">
+                    Find answers to common questions about using AnnapurnaHub for food donations and pickups.
+                </p>
+
+                <div class="space-y-4">
+                    <!-- FAQ Item -->
+                    <div class="border rounded-xl">
+                        <button class="w-full text-left px-6 py-4 flex justify-between items-center toggle-btn">
+                            <h3 class="font-semibold text-lg">How do I donate?</h3>
+                            <span class="text-2xl transform transition-transform">+</span>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-gray-600">
+                            <p>
+                                Donating food is simple! Just log in to your donor account, fill out the donation form
+                                with details
+                                like food type, quantity, and pickup location, and submit it. Our platform will connect
+                                you with
+                                local NGOs ready to accept your donation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Repeatable FAQ Items -->
+                    <div class="border rounded-xl">
+                        <button class="w-full text-left px-6 py-4 flex justify-between items-center toggle-btn">
+                            <h3 class="font-semibold text-lg">Who can donate?</h3>
+                            <span class="text-2xl transform transition-transform">+</span>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-gray-600">
+                            <p>
+                                Anyone can donate food through AnnapurnaHub! Whether you are an individual, a
+                                restaurant,
+                                or a business, our platform is designed to facilitate food donations from all sources.
+                                Join us in reducing food waste and helping those in need.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border rounded-xl">
+                        <button class="w-full text-left px-6 py-4 flex justify-between items-center toggle-btn">
+                            <h3 class="font-semibold text-lg">How does pickup work?</h3>
+                            <span class="text-2xl transform transition-transform">+</span>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-gray-600">
+                            <p>
+                                Once you submit a donation, NGOs will review and approve it. They will then coordinate
+                                with you
+                                to arrange a pickup time that works for both parties. This ensures that your donation
+                                reaches
+                                those in need promptly.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border rounded-xl">
+                        <button class="w-full text-left px-6 py-4 flex justify-between items-center toggle-btn">
+                            <h3 class="font-semibold text-lg">Can I track donations?</h3>
+                            <span class="text-2xl transform transition-transform">+</span>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-gray-600">
+                            <p>
+                                Yes! Our donor dashboard allows you to track the status of your donations from
+                                submission to
+                                distribution. You’ll also see how many people your donations have helped, providing
+                                valuable
+                                feedback on your impact.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="border rounded-xl">
+                        <button class="w-full text-left px-6 py-4 flex justify-between items-center toggle-btn">
+                            <h3 class="font-semibold text-lg">What if I have questions?</h3>
+                            <span class="text-2xl transform transition-transform">+</span>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-4 text-gray-600">
+                            <p>
+                                If you have any questions or need assistance, our support team is here to help! You can
+                                reach
+                                out through the contact form on our website. We are committed to ensuring your
+                                experience is
+                                smooth and rewarding.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-8">
+                    <h4 class="text-xl font-semibold">Still have questions?</h4>
+                    <p class="text-gray-600 mb-4">We’re here to help you!</p>
+                    <button class="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition">
+                        Contact
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL -->
+        <section class="bg-white px-6 py-20">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-10">
+                <div class="bg-gray-200 h-64 rounded-2xl flex items-center justify-center">
+                    <span class="text-gray-500">[Image Placeholder]</span>
+                </div>
+                <div class="text-left">
+                    <div class="text-xl mb-4">★★★★★</div>
+                    <p class="text-lg font-medium mb-4">
+                        "AnnapurnaHub has transformed our ability to connect with food donors, making it easier than
+                        ever to feed those in need."
+                    </p>
+                    <p class="font-semibold">John Doe</p>
+                    <p class="text-sm text-gray-600 mb-2">Director, FoodShare</p>
+                    <img src="https://assets-global.website-files.com/60e5a35d6a69f86fc5d48b60/60e5a35d6a69f8d00cd48b7d_webflow-logo.svg"
+                        alt="Webflow logo" class="h-5">
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-gray-50 px-6 py-16 text-center">
+            <h2 class="text-3xl font-bold mb-4">Join the Food Revolution</h2>
+            <p class="text-gray-600 mb-6">Help us reduce food waste today!</p>
+            <div class="flex justify-center gap-4">
+                <button class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full transition">Sign
+                    Up</button>
+                <button
+                    class="border border-black px-6 py-2 rounded-full hover:bg-black hover:text-white transition">Learn
+                    More</button>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-white px-6 pt-12 pb-6 border-t">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-left text-sm">
+                <div>
+                    <h4 class="font-bold text-lg mb-2">Logo</h4>
+                    <p class="mb-2">Subscribe to our newsletter for the latest features and updates.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your Email Here" class="border p-2 rounded-l w-full" />
+                        <button class="bg-black text-white px-4 rounded-r">Subscribe</button>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2">By subscribing, you consent to our Privacy Policy and receive
+                        updates.</p>
+                </div>
+
+                <div>
+                    <h5 class="font-bold mb-2">Resources</h5>
+                    <ul class="space-y-1 text-gray-600">
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                        <li>FAQs</li>
+                        <li>Blog</li>
+                        <li>Support Center</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold mb-2">Connect</h5>
+                    <ul class="space-y-1 text-gray-600">
+                        <li>Careers</li>
+                        <li>Partnerships</li>
+                        <li>Events</li>
+                        <li>Newsroom</li>
+                        <li>Feedback</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="font-bold mb-2">Follow Us</h5>
+                    <ul class="space-y-1 text-gray-600">
+                        <li>📘 Facebook</li>
+                        <li>📸 Instagram</li>
+                        <li>✖ Twitter</li>
+                        <li>🔗 LinkedIn</li>
+                        <li>▶️ YouTube</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-xs text-gray-500 mt-10 text-center border-t pt-6">
+                © 2025 AnnapurnaHub. All rights reserved. &nbsp;|&nbsp;
+                <a href="#" class="hover:underline">Privacy Policy</a> &nbsp;|&nbsp;
+                <a href="#" class="hover:underline">Terms of Service</a> &nbsp;|&nbsp;
+                <a href="#" class="hover:underline">Cookie Settings</a>
+            </div>
+        </footer>
+
+
+
+        <script>
+            const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    const icon = button.querySelector('span');
+                    const isOpen = !content.classList.contains('hidden');
+
+                    document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                    document.querySelectorAll('.toggle-btn span').forEach(i => i.textContent = '+');
+
+                    if (!isOpen) {
+                        content.classList.remove('hidden');
+                        icon.textContent = '−';
+                    }
+                });
+            });
+        </script>
+
+
+
+
+
+
+
+    </body>
+
+    <%- include("partials/footer") %>
