@@ -6,7 +6,7 @@
         <nav class="bg-green-600 text-white p-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold">AnnapurnaHub</h1>
             <div>
-                <a href="/dashboard" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200">Back to
+                <a href="/donor-dashboard" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200">Back to
                     Dashboard</a>
             </div>
         </nav>
@@ -31,23 +31,23 @@
                     <div>
                         <label class="block mb-1 text-gray-700 font-semibold" for="quantity">Quantity (in
                             kg/units)</label>
-                        <input type="number" id="quantity" name="quantity" min="1" placeholder="e.g. 50" required
+                        <input type="text" id="quantity" name="quantity" placeholder="e.g. 50 kg or 30 boxes" required
                             class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-300">
                     </div>
 
-                    <!-- Expiry Time -->
+                    <!-- Pickup Address -->
                     <div>
-                        <label class="block mb-1 text-gray-700 font-semibold" for="expiry">Best Before (Hours)</label>
-                        <input type="number" id="expiry" name="expiry" min="1" placeholder="e.g. 5" required
-                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-300">
-                        <p class="text-xs text-gray-500 mt-1">How many hours before food expires?</p>
-                    </div>
-
-                    <!-- Pickup Location -->
-                    <div>
-                        <label class="block mb-1 text-gray-700 font-semibold" for="location">Pickup Location</label>
-                        <textarea id="location" name="location" placeholder="Enter pickup address..." rows="3" required
+                        <label class="block mb-1 text-gray-700 font-semibold" for="pickupAddress">Pickup Address</label>
+                        <textarea id="pickupAddress" name="pickupAddress" placeholder="Enter pickup location..."
+                            rows="3" required
                             class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-300"></textarea>
+                    </div>
+
+                    <!-- Contact Number -->
+                    <div>
+                        <label class="block mb-1 text-gray-700 font-semibold" for="contactNumber">Contact Number</label>
+                        <input type="tel" id="contactNumber" name="contactNumber" placeholder="e.g. 9876543210" required
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-300">
                     </div>
 
                     <!-- Submit Button -->
@@ -62,4 +62,5 @@
         </div>
 
     </body>
+
     <%- include('partials/footer') %>

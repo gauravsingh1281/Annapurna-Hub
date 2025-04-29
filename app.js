@@ -28,7 +28,7 @@ app.use(express.static("public"));
 app.use(cookieParser());
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || uuidv4(), // Use a UUID as the session secret for better security
+    secret: process.env.SESSION_SECRET || uuidv4(),
     resave: false,
     saveUninitialized: false,
   })
@@ -37,10 +37,10 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// MongoDB connection setup based on environment
+// MongoDB connection
 const mongoURI =
   process.env.NODE_ENV === "production"
-    ? process.env.MONGODB_URI_REMOTE // Remote MongoDB (e.g., MongoDB Atlas)
+    ? process.env.MONGODB_URI_REMOTE // Remote MongoDB (for production)
     : process.env.MONGODB_URI_LOCAL; // Local MongoDB (for local development)
 
 mongoose.set("strictQuery", false);
@@ -75,6 +75,29 @@ passport.deserializeUser(async function (id, done) {
   }
 });
 
+// Food Donation Schema and Model
+const foodDonationSchema = new mongoose.Schema({
+  donor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  foodType: String,
+  quantity: String,
+  pickupAddress: String,
+  contactNumber: String,
+  status: {
+    type: String,
+    default: "Pending",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+const FoodDonation = mongoose.model("FoodDonation", foodDonationSchema);
+
 // Routes
 app.get("/", (req, res) => {
   res.render("index.ejs");
@@ -88,12 +111,44 @@ app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
 
-app.get("/donor-dashboard", (req, res) => {
+// Donate Food Form
+app.get("/donate", (req, res) => {
+  if (req.isAuthenticated() && req.user.role === "donor") {
+    res.render("donate.ejs", { user: req.user });
+  } else {
+    res.redirect("/login");
+  }
+});
+// Handle Food Donation Submission
+app.post("/donate", async (req, res) => {
+  if (!req.isAuthenticated()) return res.redirect("/login");
+
+  const { foodType, quantity, pickupAddress, contactNumber } = req.body;
+
+  try {
+    const donation = new FoodDonation({
+      donor: req.user._id,
+      foodType,
+      quantity,
+      pickupAddress,
+      contactNumber,
+    });
+
+    await donation.save();
+    res.redirect("/donor-dashboard");
+  } catch (error) {
+    console.error("Donation error:", error);
+    res.redirect("/donate");
+  }
+});
+
+app.get("/donor-dashboard", async (req, res) => {
   if (req.isAuthenticated()) {
     if (req.user.role !== "donor") {
       return res.redirect("/" + req.user.role + "-dashboard");
     }
-    res.render("donor-dashboard.ejs", { user: req.user });
+    const donations = await FoodDonation.find({ donor: req.user._id });
+    res.render("donor-dashboard.ejs", { user: req.user, donations });
   } else {
     res.redirect("/login");
   }
