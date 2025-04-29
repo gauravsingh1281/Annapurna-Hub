@@ -1,29 +1,34 @@
 <%- include('partials/header') %>
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <body class="bg-white text-gray-800">
 
         <!-- Navbar -->
         <nav class="flex justify-between items-center px-6 py-4 border-b shadow-sm">
             <div class="flex items-center space-x-2">
-                <img src="/mnt/data/A_logo_design_for_\" Annapurna_Hub\"_features_the_com.png" alt="Annapurna Logo"
-                    class="h-10 w-auto">
+                <img src="/images/anplogo.png" Annapurna_Hub\"_features_the_com.png" alt="Annapurna Logo"
+                    class="h-8 w-auto">
             </div>
             <ul class="flex space-x-6 font-medium">
-                <li><a href="#" class="hover:text-pink-600">Home</a></li>
-                <li><a href="#" class="hover:text-pink-600">About Us</a></li>
-                <li><a href="#" class="hover:text-pink-600">Contact Us</a></li>
-                <li><a href="#" class="hover:text-pink-600">More Links ▾</a></li>
+            <li><a href="#" class="hover:text-[#FD7913]">Home</a></li>
+                <li><a href="#" class="hover:text-[#FD7913]">About Us</a></li>
+                <li><a href="#" class="hover:text-[#FD7913]">Contact Us</a></li>
+                <li><a href="#" class="hover:text-[#FD7913]">More Links ▾</a></li>
             </ul>
             <div class="flex space-x-3">
                 <button
                     class="border border-black px-4 py-1 rounded-full hover:bg-black hover:text-white transition">Donate</button>
-                <button class="bg-pink-600 text-white px-4 py-1 rounded-full hover:bg-pink-700 transition">Join</button>
+                <button class="bg-[#FD7913] text-white px-4 py-1 rounded-full hover:bg-[#fd7813c0] transition">Join</button>
             </div>
         </nav>
 
         <!-- Hero Section -->
-        <section class="flex flex-col md:flex-row justify-between items-center px-8 py-16">
-            <div class="md:w-1/2 mb-10 md:mb-0">
+        <section class=" h-[100vh] flex flex-col md:flex-row justify-between items-center px-8 py-8">
+            <div class="md:w-1/2 mb-10 md:mb-0 h-100% ">
                 <h1 class="text-4xl md:text-5xl font-bold leading-snug mb-6">
                     Join the Food Donation<br />
                     Revolution Today!
@@ -34,7 +39,7 @@
                 </p>
                 <div class="space-x-4">
                     <a href="#"
-                        class="bg-pink-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-pink-700">Sign
+                    class="bg-[#FD7913] text-white px-5 py-2  rounded-full font-semibold hover:bg-[#fd7813c0]">Sign
                         Up</a>
                     <a href="#"
                         class="border border-gray-700 px-5 py-2 rounded-full font-semibold hover:bg-gray-100">Learn
@@ -50,7 +55,7 @@
         </section>
 
         <!-- Connect Section -->
-        <section class="flex flex-col md:flex-row justify-between items-center px-8 py-16 bg-gray-50">
+        <section class=" h-[90vh] flex flex-col md:flex-row justify-between items-center px-8 py-16 bg-white">
             <div class="md:w-1/2 space-y-6 mb-10 md:mb-0">
                 <p class="font-semibold">Connect</p>
                 <h2 class="text-3xl md:text-4xl font-bold">Bridging Donors and NGOs for Food Rescue</h2>
@@ -60,13 +65,13 @@
                 </p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
                     <div>
-                        <div class="text-2xl mb-2">📦</div>
+                        <div class="text-2xl mb-2"><i class="fa-solid fa-arrows-spin"></i></div>
                         <h3 class="font-semibold">Empower Change</h3>
                         <p class="text-sm text-gray-600">Transform food waste into nourishment for communities in need.
                         </p>
                     </div>
                     <div>
-                        <div class="text-2xl mb-2">📦</div>
+                        <div class="text-2xl mb-2"><i class="fa-solid fa-user-plus"></i></div>
                         <h3 class="font-semibold">Join Us</h3>
                         <p class="text-sm text-gray-600">Be part of a solution that makes a difference.</p>
                     </div>
@@ -74,12 +79,12 @@
                 <div class="pt-6 space-x-4">
                     <a href="#" class="border border-black px-5 py-2 rounded-full font-semibold hover:bg-gray-100">Learn
                         More</a>
-                    <a href="#" class="text-pink-600 font-medium hover:underline">Sign Up →</a>
+                    <a href="#" class="text-[#FD7913] font-medium hover:underline">Sign Up →</a>
                 </div>
             </div>
             <div class="md:w-1/2 flex justify-center">
-                <div class="bg-gray-200 w-full h-64 md:h-80 rounded-xl flex items-center justify-center">
-                    <span class="text-gray-400 text-3xl">Image Placeholder</span>
+                <div class=" w-full h-64 md:h-80 rounded-xl flex items-center justify-center">
+                    <img class="w-[300px] h-64 md:h-80 rounded-xl object-cover" src="/images/anp2.png" alt="">
                 </div>
             </div>
         </section>
@@ -106,21 +111,21 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <div class="text-2xl mb-3">📦</div>
+                    <div class="text-2xl mb-3"><i class="fa-solid fa-users"></i></div>
                     <h3 class="font-semibold text-lg">User-Friendly Dashboards for Donors and NGOs</h3>
                     <p class="text-sm text-gray-600 mt-2 mb-3">Experience intuitive dashboards customized for each user
                         role.</p>
                     <a href="#" class="font-medium hover:underline">Learn More →</a>
                 </div>
                 <div>
-                    <div class="text-2xl mb-3">📦</div>
+                    <div class="text-2xl mb-3"><i class="fa-solid fa-clock"></i></div>
                     <h3 class="font-semibold text-lg">Real-Time Status Tracking for Food Donations</h3>
                     <p class="text-sm text-gray-600 mt-2 mb-3">Track your donations from pending to distribution
                         seamlessly.</p>
                     <a href="#" class="font-medium hover:underline">Sign Up →</a>
                 </div>
                 <div>
-                    <div class="text-2xl mb-3">📦</div>
+                    <div class="text-2xl mb-3"><i class="fa-solid fa-users-rays"></i></div>
                     <h3 class="font-semibold text-lg">Responsive Design for All Devices</h3>
                     <p class="text-sm text-gray-600 mt-2 mb-3">Access our platform anytime, anywhere, on any device.</p>
                     <a href="#" class="font-medium hover:underline">Join Us →</a>
@@ -129,7 +134,7 @@
         </section>
 
         <!-- Donation Process Section -->
-        <section class="px-8 py-20 bg-gray-50 text-center">
+        <section class="px-8 py-20 bg-white text-center">
             <h3 class="text-sm font-semibold text-gray-500 mb-2">Donate</h3>
             <h2 class="text-3xl md:text-4xl font-bold mb-4">How Our Donation Process Works</h2>
             <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-10">
@@ -139,32 +144,32 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
                 <div class="space-y-8">
                     <div>
-                        <div class="text-2xl mb-2">📦</div>
+                        <div class="text-2xl mb-2"><i class="ri-hand-heart-fill"></i></div>
                         <h4 class="font-semibold">Step 1: Submit Donation</h4>
                         <p class="text-sm text-gray-600">Donors provide details about the food they wish to donate,
                             making the process simple and efficient.</p>
                     </div>
                     <div>
-                        <div class="text-2xl mb-2">📦</div>
+                        <div class="text-2xl mb-2"><i class="ri-checkbox-circle-fill"></i></div>
                         <h4 class="font-semibold">Step 2: NGO Approval</h4>
                         <p class="text-sm text-gray-600">NGOs review the donations and approve them based on
                             availability and logistics for pickup.</p>
                     </div>
                 </div>
                 <div class="flex justify-center items-center">
-                    <div class="bg-gray-200 w-64 h-64 rounded-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-xl">Process Illustration</span>
+                    <div class=" w-120 h-64 rounded-xl flex items-center justify-center">
+                        <img class="w-full h-full md:h-80 rounded-xl object-cover"src="/images/apn3.png" alt="">
                     </div>
                 </div>
                 <div class="space-y-8">
                     <div>
-                        <div class="text-2xl mb-2">📦</div>
+                        <div class="text-2xl mb-2"><i class="ri-luggage-cart-fill"></i></div>
                         <h4 class="font-semibold">Step 3: Food Pickup</h4>
                         <p class="text-sm text-gray-600">Approved donations are picked up by volunteers, ensuring timely
                             and efficient food distribution.</p>
                     </div>
                     <div>
-                        <div class="text-2xl mb-2">📦</div>
+                        <div class="text-2xl mb-2"><i class="ri-bowl-fill"></i></div>
                         <h4 class="font-semibold">Step 4: Distribution</h4>
                         <p class="text-sm text-gray-600">Food reaches those in need, helping to reduce waste and combat
                             hunger in our communities.</p>
@@ -191,14 +196,14 @@
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
                         <div>
-                            <div class="text-2xl mb-2">📦</div>
+                            <div class="text-2xl mb-2"><i class="ri-calendar-schedule-line"></i></div>
                             <h3 class="font-semibold">Real-Time Updates</h3>
                             <p class="text-sm text-gray-600">
                                 Stay informed with instant notifications on donation status and logistics.
                             </p>
                         </div>
                         <div>
-                            <div class="text-2xl mb-2">📦</div>
+                            <div class="text-2xl mb-2"><i class="ri-award-fill"></i></div>
                             <h3 class="font-semibold">Visible Impact</h3>
                             <p class="text-sm text-gray-600">
                                 Track how your contributions help feed those in need.
@@ -209,12 +214,12 @@
                         <a href="#"
                             class="border border-black px-5 py-2 rounded-full font-semibold hover:bg-gray-100">Learn
                             More</a>
-                        <a href="#" class="text-pink-600 font-medium hover:underline">Sign Up →</a>
+                        <a href="#" class="text-[#FD7913] font-medium hover:underline">Sign Up →</a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
-                    <div class="bg-gray-200 w-full h-64 md:h-80 rounded-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-xl">Image Placeholder</span>
+                    <div class=" w-full h-64 md:h-80 rounded-xl flex items-center justify-center">
+                        <img src="/images/apn4.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -233,8 +238,8 @@
                     </p>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
-                    <div class="bg-gray-200 w-full h-64 md:h-80 rounded-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-xl">Image Placeholder</span>
+                    <div class=" w-full h-64 md:h-80 rounded-xl flex items-center justify-center">
+                        <img src="/images/apn5.png" alt="">
                     </div>
                 </div>
             </div>
@@ -342,8 +347,8 @@
         <!-- TESTIMONIAL -->
         <section class="bg-white px-6 py-20">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-10">
-                <div class="bg-gray-200 h-64 rounded-2xl flex items-center justify-center">
-                    <span class="text-gray-500">[Image Placeholder]</span>
+                <div class="h-64 rounded-2xl flex items-center justify-center">
+                    <img  class ="h-full " src="/images/apn7.jpg" alt="">
                 </div>
                 <div class="text-left">
                     <div class="text-xl mb-4">★★★★★</div>
@@ -353,8 +358,7 @@
                     </p>
                     <p class="font-semibold">John Doe</p>
                     <p class="text-sm text-gray-600 mb-2">Director, FoodShare</p>
-                    <img src="https://assets-global.website-files.com/60e5a35d6a69f86fc5d48b60/60e5a35d6a69f8d00cd48b7d_webflow-logo.svg"
-                        alt="Webflow logo" class="h-5">
+                    <img src="/images/apn7.jpg"alt="Webflow logo" class="h-5">
                 </div>
             </div>
         </section>
@@ -364,7 +368,7 @@
             <h2 class="text-3xl font-bold mb-4">Join the Food Revolution</h2>
             <p class="text-gray-600 mb-6">Help us reduce food waste today!</p>
             <div class="flex justify-center gap-4">
-                <button class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full transition">Sign
+                <button class="bg-[#FD7913] hover:bg-[#fd7813c0] text-white px-6 py-2 rounded-full transition">Sign
                     Up</button>
                 <button
                     class="border border-black px-6 py-2 rounded-full hover:bg-black hover:text-white transition">Learn
@@ -376,7 +380,7 @@
         <footer class="bg-white px-6 pt-12 pb-6 border-t">
             <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-left text-sm">
                 <div>
-                    <h4 class="font-bold text-lg mb-2">Logo</h4>
+                    <img src="/images/anplogo.png"class="w-[100px]" alt="">
                     <p class="mb-2">Subscribe to our newsletter for the latest features and updates.</p>
                     <div class="flex">
                         <input type="email" placeholder="Your Email Here" class="border p-2 rounded-l w-full" />
@@ -411,11 +415,11 @@
                 <div>
                     <h5 class="font-bold mb-2">Follow Us</h5>
                     <ul class="space-y-1 text-gray-600">
-                        <li>📘 Facebook</li>
-                        <li>📸 Instagram</li>
-                        <li>✖ Twitter</li>
-                        <li>🔗 LinkedIn</li>
-                        <li>▶️ YouTube</li>
+                        <li><i class="ri-facebook-box-fill"></i>Facebook</li>
+                        <li><i class="ri-instagram-line"></i> Instagram</li>
+                        <li><i class="ri-twitter-x-fill"></i> Twitter</li>
+                        <li><i class="ri-linkedin-box-line"></i> LinkedIn</li>
+                        <li><i class="ri-youtube-line"></i> YouTube</li>
                     </ul>
                 </div>
             </div>
