@@ -167,32 +167,30 @@ app.get("/ngo-dashboard", async (req, res) => {
 
   // Pagination setup
   const page = parseInt(req.query.page) || 1;
-  const limit = 5;
+  const limit = parseInt(req.query.limit) || 5;
   const skip = (page - 1) * limit;
 
-  // Filter setup
   const query = {};
-  if (status && status !== "All") query.status = status;
-  if (pickupAddress) query.pickupAddress = new RegExp(pickupAddress, "i");
+  if (req.query.status && req.query.status !== "All") {
+    query.status = req.query.status;
+  }
+  if (req.query.pickupAddress) {
+    query.pickupAddress = new RegExp(req.query.pickupAddress, "i");
+  }
 
-  // Count total donations for pagination
   const total = await FoodDonation.countDocuments(query);
+  const donations = await FoodDonation.find(query).skip(skip).limit(limit);
 
-  // Get paginated, filtered donations
-  const donations = await FoodDonation.find(query)
-    .skip(skip)
-    .limit(limit)
-    .populate("donor");
-
-  res.render("ngo-dashboard.ejs", {
-    user: req.user,
+  res.render("ngo-dashboard", {
     donations,
     filters: {
-      status: status || "All",
-      pickupAddress: pickupAddress || "",
+      status: req.query.status || "All",
+      pickupAddress: req.query.pickupAddress || "",
+      limit,
     },
     currentPage: page,
     totalPages: Math.ceil(total / limit),
+    user: req.user,
   });
 });
 
