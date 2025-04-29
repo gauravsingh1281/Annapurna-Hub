@@ -1,28 +1,27 @@
 <%- include('partials/header') %>
-<link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <body class="bg-white text-gray-800">
 
         <!-- Navbar -->
         <nav class="flex justify-between items-center px-6 py-4 border-b shadow-sm">
             <div class="flex items-center space-x-2">
-                <img src="/images/anplogo.png" Annapurna_Hub\"_features_the_com.png" alt="Annapurna Logo"
-                    class="h-8 w-auto">
+                <img src="/images/anplogo.png" alt="Annapurna Logo" class="h-8 w-auto">
             </div>
             <ul class="flex space-x-6 font-medium">
-            <li><a href="#" class="hover:text-[#FD7913]">Home</a></li>
-                <li><a href="#" class="hover:text-[#FD7913]">About Us</a></li> 
+                <li><a href="#" class="hover:text-[#FD7913]">Home</a></li>
+                <li><a href="#" class="hover:text-[#FD7913]">About Us</a></li>
                 <li><a href="#" class="hover:text-[#FD7913]">Contact Us</a></li>
                 <li><a href="#" class="hover:text-[#FD7913]">More Links ▾</a></li>
             </ul>
             <div class="flex space-x-3">
+                <a href="/register"><button
+                        class="border border-black px-4 py-1 rounded-full hover:bg-black hover:text-white transition">Donate</button></a>
                 <button
-                    class="border border-black px-4 py-1 rounded-full hover:bg-black hover:text-white transition">Donate</button>
-                <button class="bg-[#FD7913] text-white px-4 py-1 rounded-full hover:bg-[#fd7813c0] transition">Join</button>
+                    class="bg-[#FD7913] text-white px-4 py-1 rounded-full hover:bg-[#fd7813c0] transition">Join</button>
             </div>
         </nav>
 
@@ -38,8 +37,8 @@
                     Join us in creating a sustainable solution to hunger and food surplus.
                 </p>
                 <div class="space-x-4">
-                    <a href="#"
-                    class="bg-[#FD7913] text-white px-5 py-2  rounded-full font-semibold hover:bg-[#fd7813c0]">Sign
+                    <a href="/register"
+                        class="bg-[#FD7913] text-white px-5 py-2  rounded-full font-semibold hover:bg-[#fd7813c0]">Sign
                         Up</a>
                     <a href="#"
                         class="border border-gray-700 px-5 py-2 rounded-full font-semibold hover:bg-gray-100">Learn
@@ -158,7 +157,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class=" w-120 h-64 rounded-xl flex items-center justify-center">
-                        <img class="w-full h-full md:h-80 rounded-xl object-cover"src="/images/apn3.png" alt="">
+                        <img class="w-full h-full md:h-80 rounded-xl object-cover" src="/images/apn3.png" alt="">
                     </div>
                 </div>
                 <div class="space-y-8">
@@ -348,7 +347,7 @@
         <section class="bg-white px-6 py-20">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-10">
                 <div class="h-64 rounded-2xl flex items-center justify-center">
-                    <img  class ="h-full " src="/images/apn7.jpg" alt="">
+                    <img class="h-full " src="/images/apn7.jpg" alt="">
                 </div>
                 <div class="text-left">
                     <div class="text-xl mb-4">★★★★★</div>
@@ -358,7 +357,7 @@
                     </p>
                     <p class="font-semibold">John Doe</p>
                     <p class="text-sm text-gray-600 mb-2">Director, FoodShare</p>
-                    <img src="/images/apn7.jpg"alt="Webflow logo" class="h-5">
+                    <img src="/images/apn7.jpg" alt="Webflow logo" class="h-5">
                 </div>
             </div>
         </section>
@@ -380,7 +379,7 @@
         <footer class="bg-white px-6 pt-12 pb-6 border-t">
             <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10 text-left text-sm">
                 <div>
-                    <img src="/images/anplogo.png"class="w-[100px]" alt="">
+                    <img src="/images/anplogo.png" class="w-[100px]" alt="">
                     <p class="mb-2">Subscribe to our newsletter for the latest features and updates.</p>
                     <div class="flex">
                         <input type="email" placeholder="Your Email Here" class="border p-2 rounded-l w-full" />

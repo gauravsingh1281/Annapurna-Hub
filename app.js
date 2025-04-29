@@ -11,14 +11,12 @@ import cookieParser from "cookie-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { v4 as uuidv4 } from "uuid";
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -28,7 +26,7 @@ app.use(express.static("public"));
 app.use(cookieParser());
 app.use(
   session({
-    secret: process.env.SESSION_SECRET || uuidv4(),
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })
@@ -279,7 +277,9 @@ app.get("/logout", (req, res) => {
   });
 });
 
-// Server Initialization
-app.listen(port, () => {
-  console.log(`App started listening on port ${port}`);
-});
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+app.listen(port, () => console.log(`App Started listening on port ${port}!`));
