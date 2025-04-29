@@ -157,12 +157,62 @@ app.get("/donor-dashboard", async (req, res) => {
   }
 });
 
+// NGO Dashboard Route
 app.get("/ngo-dashboard", async (req, res) => {
-  if (req.isAuthenticated() && req.user.role === "ngo") {
-    const donations = await FoodDonation.find().populate("donor");
-    res.render("ngo-dashboard.ejs", { user: req.user, donations });
-  } else {
-    res.redirect("/login");
+  if (!req.isAuthenticated() || req.user.role !== "ngo") {
+    return res.redirect("/login");
+  }
+
+  const { status, pickupAddress } = req.query;
+
+  // Pagination setup
+  const page = parseInt(req.query.page) || 1;
+  const limit = 5;
+  const skip = (page - 1) * limit;
+
+  // Filter setup
+  const query = {};
+  if (status && status !== "All") query.status = status;
+  if (pickupAddress) query.pickupAddress = new RegExp(pickupAddress, "i");
+
+  // Count total donations for pagination
+  const total = await FoodDonation.countDocuments(query);
+
+  // Get paginated, filtered donations
+  const donations = await FoodDonation.find(query)
+    .skip(skip)
+    .limit(limit)
+    .populate("donor");
+
+  res.render("ngo-dashboard.ejs", {
+    user: req.user,
+    donations,
+    filters: {
+      status: status || "All",
+      pickupAddress: pickupAddress || "",
+    },
+    currentPage: page,
+    totalPages: Math.ceil(total / limit),
+  });
+});
+
+// toggle-status Route (for changing donation status)
+// This route is used to toggle the status of a donation between "Accepted" and "Pending"
+app.post("/toggle-status/:id", async (req, res) => {
+  try {
+    const donation = await FoodDonation.findById(req.params.id);
+    if (!donation) {
+      return res.status(404).send("Donation not found");
+    }
+
+    // Toggle status
+    donation.status = donation.status === "Pending" ? "Accepted" : "Pending";
+    await donation.save();
+
+    res.redirect("/ngo-dashboard"); // or redirect to req.get("referer") to go back to previous page
+  } catch (err) {
+    console.error("Error toggling status:", err);
+    res.status(500).send("Server Error");
   }
 });
 

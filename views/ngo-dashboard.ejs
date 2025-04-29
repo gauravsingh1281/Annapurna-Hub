@@ -11,9 +11,48 @@
             </div>
         </nav>
 
-        <!-- Main Section -->
+        <!-- Filter Section -->
         <div class="p-6">
-            <h2 class="text-2xl font-bold text-green-700 mb-4">Available Food Donations</h2>
+            <form action="/ngo-dashboard" method="GET" class="flex flex-wrap gap-4 items-end">
+                <!-- Status Filter -->
+                <div>
+                    <label for="status" class="block text-gray-700 font-medium mb-1">Filter by Status</label>
+                    <select name="status" id="status" class="border p-2 rounded">
+                        <option value="All" <%=filters.status==="All" ? "selected" : "" %>>All</option>
+                        <option value="Pending" <%=filters.status==="Pending" ? "selected" : "" %>>Pending</option>
+                        <option value="Accepted" <%=filters.status==="Accepted" ? "selected" : "" %>>Accepted</option>
+                    </select>
+                </div>
+
+                <!-- Pickup Address Filter -->
+                <div>
+                    <label for="pickupAddress" class="block text-gray-700 font-medium mb-1">Search by Pickup
+                        Address</label>
+                    <input type="text" name="pickupAddress" id="pickupAddress" value="<%= filters.pickupAddress %>"
+                        placeholder="e.g. Delhi" class="border p-2 rounded w-64" />
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex gap-2">
+                    <button type="submit" class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded">Apply
+                        Filters</button>
+                    <a href="/ngo-dashboard" class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded">
+                        Reset
+                    </a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Donations Section -->
+        <div class="p-6">
+            <h2 class="text-2xl font-bold text-green-700 mb-2">Available Food Donations</h2>
+
+            <p class="text-sm text-gray-500 mb-4">
+                Showing: <strong>
+                    <%= filters.status %>
+                </strong>
+                <% if (filters.pickupAddress) { %> | Pickup Address: "<%= filters.pickupAddress %>" <% } %>
+            </p>
 
             <% if (donations.length===0) { %>
                 <p class="text-gray-500">No donations available.</p>
@@ -41,26 +80,45 @@
                                         <%= donation.pickupAddress %>
                                     </td>
                                     <td class="py-2">
-                                        <%= donation.status %>
+                                        <% if (donation.status==='Accepted' ) { %>
+                                            <span
+                                                class="bg-green-100 text-green-700 px-2 py-1 rounded text-sm">Accepted</span>
+                                            <% } else { %>
+                                                <span
+                                                    class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-sm">Pending</span>
+                                                <% } %>
                                     </td>
                                     <td class="py-2">
-                                        <% if (donation.status==='Pending' ) { %>
-                                            <form action="/accept-donation/<%= donation._id %>" method="POST">
-                                                <button type="submit"
-                                                    class="bg-green-600 text-white px-4 py-1 rounded hover:bg-green-700">
-                                                    Accept
-                                                </button>
-                                            </form>
-                                            <% } else { %>
-                                                <span class="text-green-600 font-semibold">Accepted</span>
-                                                <% } %>
+                                        <form action="/toggle-status/<%= donation._id %>" method="POST">
+                                            <button type="submit" class="px-3 py-1 rounded-full text-sm font-medium 
+                                              <%= donation.status === 'Accepted' 
+                                                  ? 'bg-green-100 text-green-700' 
+                                                  : 'bg-yellow-100 text-yellow-700' %> hover:opacity-90">
+                                                <%= donation.status %>
+                                            </button>
+                                        </form>
+
                                     </td>
                                 </tr>
                                 <% }); %>
                         </tbody>
                     </table>
-                    <% } %>
+
+                    <!-- Pagination -->
+                    <% if (totalPages> 1) { %>
+                        <div class="mt-6 flex justify-center gap-2">
+                            <% for (let i=1; i <=totalPages; i++) { %>
+                                <a href="?page=<%= i %>&status=<%= filters.status %>&pickupAddress=<%= filters.pickupAddress %>"
+                                    class="px-3 py-1 rounded border <%= i === currentPage ? 'bg-green-600 text-white' : 'bg-white text-green-700 hover:bg-gray-100' %>">
+                                    <%= i %>
+                                </a>
+                                <% } %>
+                        </div>
+                        <% } %>
+
+                            <% } %>
         </div>
 
     </body>
+
     <%- include('partials/footer') %>
