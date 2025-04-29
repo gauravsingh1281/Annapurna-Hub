@@ -84,12 +84,15 @@ const foodDonationSchema = new mongoose.Schema({
   },
   foodType: String,
   quantity: String,
+  expiry: Number,
   pickupAddress: String,
   contactNumber: String,
   status: {
     type: String,
     default: "Pending",
   },
+  peopleFed: Number,
+  acceptedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   createdAt: {
     type: Date,
     default: Date.now,
@@ -154,14 +157,32 @@ app.get("/donor-dashboard", async (req, res) => {
   }
 });
 
-app.get("/ngo-dashboard", (req, res) => {
-  if (req.isAuthenticated()) {
-    if (req.user.role !== "ngo") {
-      return res.redirect("/" + req.user.role + "-dashboard");
-    }
-    res.render("ngo-dashboard.ejs", { user: req.user });
+app.get("/ngo-dashboard", async (req, res) => {
+  if (req.isAuthenticated() && req.user.role === "ngo") {
+    const donations = await FoodDonation.find().populate("donor");
+    res.render("ngo-dashboard.ejs", { user: req.user, donations });
   } else {
     res.redirect("/login");
+  }
+});
+
+// Handle Food Donation Acceptance
+app.post("/accept-donation/:id", async (req, res) => {
+  if (!req.isAuthenticated() || req.user.role !== "ngo")
+    return res.redirect("/login");
+
+  const donationId = req.params.id;
+
+  try {
+    await FoodDonation.findByIdAndUpdate(donationId, {
+      status: "Accepted",
+      acceptedBy: req.user._id,
+      peopleFed: Math.floor(Math.random() * 10) + 1, // optional random value
+    });
+    res.redirect("/ngo-dashboard");
+  } catch (err) {
+    console.log(err);
+    res.redirect("/ngo-dashboard");
   }
 });
 
