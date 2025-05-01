@@ -1,13 +1,14 @@
 <%- include('partials/header') %>
 
-    <body class="bg-gray-50">
+    <body class="bg-[#fef3c6b8]">
 
         <!-- Navbar -->
-        <nav class="bg-green-600 text-white p-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">AnnapurnaHub</h1>
+        <nav class="bg-white text-white p-4 h-20 flex justify-between items-center">
+            <img src="/images/anplogo.png" class="h-full" alt="">
             <div>
-                <span class="mr-4">Hi, <%= user.name %>!</span>
-                <a href="/logout" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200">Logout</a>
+                <span class="mr-4 text-[#FD7913]">Hi, <%= user.name %>!</span>
+                <a href="/logout"
+                    class="bg-[#FD7913] text-white px-4 py-2 rounded hover:bg-[#fd7813d5] hover:text-white">Logout</a>
             </div>
         </nav>
 
@@ -17,14 +18,14 @@
             <!-- Quick Action -->
             <div class="flex justify-center mb-8">
                 <a href="/donate"
-                    class="bg-green-700 hover:bg-green-800 text-white py-3 px-6 rounded-xl text-lg font-semibold transition">
+                    class="bg-[#FD7913] hover:bg-[#fd7813c0] text-white py-3 px-6 rounded-xl text-lg font-semibold transition">
                     + New Food Donation
                 </a>
             </div>
 
             <!-- Past Donations Table -->
             <div class="bg-white p-6 rounded-xl shadow">
-                <h2 class="text-2xl font-bold mb-4 text-green-700">Your Donations</h2>
+                <h2 class="text-2xl font-bold mb-4 text-[#FD7913]">Your Donations</h2>
 
                 <% if (donations.length===0) { %>
                     <p class="text-gray-500 text-center">You haven't made any food donations yet.</p>
