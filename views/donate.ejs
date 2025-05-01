@@ -1,12 +1,13 @@
 <%- include('partials/header') %>
 
-    <body class="bg-gray-50">
+    <body class="bg-[#fef3c6b8]">
 
         <!-- Navbar -->
-        <nav class="bg-green-600 text-white p-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">AnnapurnaHub</h1>
+        <nav class="bg-white h-20 text-white p-4 flex justify-between items-center">
+            <img src="/images/anplogo.png" class="h-full" alt="logo">
             <div>
-                <a href="/donor-dashboard" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200">Back to
+                <a href="/donor-dashboard" class="bg-[#FD7913] text-white px-4 py-2 rounded hover:bg-[#fd7813e7]">Back
+                    to
                     Dashboard</a>
             </div>
         </nav>
@@ -15,7 +16,7 @@
         <div class="flex justify-center items-center min-h-screen p-6">
             <div class="bg-white p-10 rounded-xl shadow-md w-full max-w-md">
 
-                <h2 class="text-3xl font-bold text-center mb-8 text-green-700">Donate Food</h2>
+                <h2 class="text-3xl font-bold text-center mb-8 text-[#FD7913]">Donate Food</h2>
 
                 <form action="/donate" method="POST" class="space-y-6">
 
@@ -24,7 +25,7 @@
                         <label class="block mb-1 text-gray-700 font-semibold" for="foodType">Food Type</label>
                         <input type="text" id="foodType" name="foodType" placeholder="e.g. Rice, Fruits, Packaged Meals"
                             required
-                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-300">
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#fd7813d8]">
                     </div>
 
                     <!-- Quantity -->
@@ -32,7 +33,7 @@
                         <label class="block mb-1 text-gray-700 font-semibold" for="quantity">Quantity (in
                             kg/units)</label>
                         <input type="text" id="quantity" name="quantity" placeholder="e.g. 50 kg or 30 boxes" required
-                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-300">
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#fd7813d8]">
                     </div>
 
                     <!-- Pickup Address -->
@@ -40,19 +41,19 @@
                         <label class="block mb-1 text-gray-700 font-semibold" for="pickupAddress">Pickup Address</label>
                         <textarea id="pickupAddress" name="pickupAddress" placeholder="Enter pickup location..."
                             rows="3" required
-                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-300"></textarea>
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#fd7813d8]"></textarea>
                     </div>
 
                     <!-- Contact Number -->
                     <div>
                         <label class="block mb-1 text-gray-700 font-semibold" for="contactNumber">Contact Number</label>
                         <input type="tel" id="contactNumber" name="contactNumber" placeholder="e.g. 9876543210" required
-                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-300">
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#fd7813d8]">
                     </div>
 
                     <!-- Submit Button -->
                     <button type="submit"
-                        class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold text-lg transition">
+                        class="w-full bg-[#fd7813] hover:bg-[#ffbe8dcc] text-white py-3 rounded-xl font-bold text-lg transition">
                         Submit Donation
                     </button>
 
