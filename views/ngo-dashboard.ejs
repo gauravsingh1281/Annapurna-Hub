@@ -3,12 +3,12 @@
     <body class="bg-gray-50 min-h-screen">
 
         <!-- Navbar -->
-        <nav class="bg-green-600 text-white px-4 py-3 flex flex-col md:flex-row md:justify-between md:items-center">
+        <nav class="bg-[#FD7913] text-white px-4 py-3 flex flex-col md:flex-row md:justify-between md:items-center">
             <h1 class="text-xl sm:text-2xl font-bold mb-2 md:mb-0">AnnapurnaHub - NGO Dashboard</h1>
             <div class="text-sm sm:text-base">
                 <span class="mr-3">Welcome, <%= user.name %></span>
                 <a href="/logout"
-                    class="bg-white text-green-700 px-3 py-1 rounded hover:bg-gray-200 transition duration-200">Logout</a>
+                    class="bg-white text-[#fd7813c0] px-3 py-1 rounded hover:bg-gray-200 transition duration-200">Logout</a>
             </div>
         </nav>
 
@@ -47,7 +47,7 @@
                 <!-- Buttons -->
                 <div class="col-span-full flex gap-2 mt-2 sm:mt-0">
                     <button type="submit"
-                        class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded transition duration-200">Apply
+                        class="bg-[#FD7913] hover:bg-[#fd7813c0] text-white px-4 py-2 rounded transition duration-200">Apply
                         Filters</button>
                     <a href="/ngo-dashboard"
                         class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded transition duration-200">Reset</a>
@@ -57,7 +57,7 @@
 
         <!-- Donation List -->
         <div class="p-4 sm:p-6">
-            <h2 class="text-xl sm:text-2xl font-bold text-green-700 mb-2">Available Food Donations</h2>
+            <h2 class="text-xl sm:text-2xl font-bold text-[#FD7913] mb-2">Available Food Donations</h2>
             <p class="text-sm text-gray-500 mb-4">
                 Showing: <strong>
                     <%= filters.status %>
@@ -94,7 +94,7 @@
                                         <td class="py-2 px-2">
                                             <% if (donation.status==='Accepted' ) { %>
                                                 <span
-                                                    class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs sm:text-sm">Accepted</span>
+                                                    class="bg-green-100 text-[#69d40c] px-2 py-1 rounded text-xs sm:text-sm">Accepted</span>
                                                 <% } else { %>
                                                     <span
                                                         class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs sm:text-sm">Pending</span>
